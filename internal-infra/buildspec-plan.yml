@@ -1,0 +1,15 @@
+version: 0.2
+phases:
+  pre_build:
+    commands:
+      - terraform --version
+  build:
+    commands:
+      - cd ${CODEBUILD_SRC_DIR}
+      - sed -i "s/AWS_REGION_HERE/${AWS_REGION}/g; s/BUCKET_NAME_HERE/${BUCKET_NAME}/g; s/DYNAMO_DB_NAME_HERE/${DYNAMO_DB_NAME}/g" provider.tf
+      - terraform init
+      - terraform plan
+  post_build:
+    commands:
+      - echo "Terraform plan completed on `date`"
+      

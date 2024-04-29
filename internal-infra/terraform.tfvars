@@ -1,0 +1,9 @@
+dynamo_db_name = "s215-hanzalah-git-repo"
+hash_key = "request_id"
+dynamo_read_capacity = 1
+dynamo_write_capacity = 1
+lambda_func_name = "s215-hanzalah"
+lambda_policy_name = "s215-hanzalah"
+lambda_role_name = "s215-hanzalah"
+timeout = 15
+aws_region = "eu-west-1"
